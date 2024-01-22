@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD student</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="border: groove; padding: 10px;">
+      <h2 style="text-align: center;">Thông tin học viên</h2>
+      <label for="fullName">Họ và tên</label>
+      <input style="width: 180px; height: 20px; margin-left: 22px;" type="text" id="fullName" placeholder="Vui lòng nhập họ và tên" />
+
+      <br /><br />
+      <label for="email">Email</label>
+      <input style="width: 180px; height: 20px; margin-left: 45px;" type="email" id="email" placeholder="Vui lòng nhập email" />
+      <br /><br />
+      <label for="phoneNumber">Số điện thoại</label>
+      <input
+        style="width: 180px; height: 20px; "
+        type="text"
+        id="phoneNumber"
+        placeholder="Vui lòng nhập số điện thoại"
+      />
+      <br /><br />
+      <label for="address">Quê quán</label>
+      <input style="width: 180px; height: 20px; margin-left: 23px;" type="text" id="address" placeholder="Vui lòng nhập quê quán" />
+      <br /><br />
+      <label for="gender">Giới tính</label>
+      <input style="margin-left: 27px;" type="radio" name="gender" id="male" value="Nam" checked />Nam
+      <input type="radio" name="gender" id="female" value="Nữ" />Nữ
+      <span id="studentId" style="display: none"></span><br /><br />
+
+      <button style="width: 100px; height: 20px; margin: 0 auto; display: block;" onclick="save()" id="save">Lưu lại</button>
+
+    </div>
+    <div style="border: groove; padding: 10px;" >
+      <h2 style="text-align: center;">Danh sách học viên</h2>
+      <label for="">Tìm kiếm học viên</label>
+      <input type="text" id="searchStudent" />
+      <button onclick="search()" id="search">Search</button>
+
+      <table border="1">
+        <thead>
+          <th>#</th>
+          <th>Họ và tên</th>
+          <th>Email</th>
+          <th>Điện thoại</th>
+          <th>Địa chỉ</th>
+          <th>Giới tính</th>
+          <th>Hành động</th>
+          <th><button onclick="arrange()">Sắp xếp (alpha b)</button></th>
+        </thead>
+        <tbody id="tableStudent"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
